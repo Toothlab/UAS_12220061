@@ -32,7 +32,7 @@ ax.bar(data_olah["tahun"], data_olah["produksi"], color="black")
 ax.set_xticklabels(data_olah["tahun"])
 ax.set_xlabel("Tahun", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-#st.pyplot(fig)
+st.pyplot(fig)
 #plotting untuk soal A
 
 #plotting untuk soal B
@@ -48,6 +48,7 @@ colors = cmap.colors[:len(b_besar_negara_tahun["kode_negara"])]
 ax.bar(b_besar_negara_tahun["kode_negara"], b_besar_negara_tahun["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
+plt.tight_layout()
 #plotting untuk soal B
 
 #plotting untuk soal C
@@ -62,6 +63,7 @@ colors = cmap.colors[:len(b_reset["kode_negara"])]
 ax.bar(b_reset["kode_negara"], b_reset["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
+plt.tight_layout()
 #plotting untuk soal C
 
 #tabel untuk soal D (terbesar) pada tahun T
