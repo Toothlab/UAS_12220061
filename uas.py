@@ -10,8 +10,8 @@ st.subheader("Devanto Wicaksono Soekardi (12220061)")
 
 #input user
 nama_negara = st.sidebar.text_input("Masukkan nama negara")
-tahun = st.sidebar.number_input("Masukkan tahun", min_value=1971, max_value=2015, value = 2001)
-nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, max_value=200, value = 10)
+tahun = st.sidebar.number_input("Masukkan tahun", min_value=1971, max_value=2015, value = 2001, step = 1)
+nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, max_value=200, value = 10, step = 1)
 
 #input user
 
@@ -50,7 +50,7 @@ fig, ax = plt.subplots()
 ax.bar(b_besar_negara_tahun["kode_negara"], b_besar_negara_tahun["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader(int(nilai_b) + " Besar Negara Produsen Minyak di Tahun " + int(tahun))
+st.subheader(str(nilai_b) + " Besar Negara Produsen Minyak di Tahun " + str(tahun))
 st.pyplot(fig)
 #plotting untuk soal B
 
