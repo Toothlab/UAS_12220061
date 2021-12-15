@@ -81,6 +81,7 @@ st.table(data_frame_d)
 
 #tabel untuk soal D (terbesar) pada keseluruhan tahun
 data_terbesar = b_reset["kode_negara"][0]
+besar_produksi = b_reset["produksi"][0]
 cek3 = [i for i in file_si_json if i["alpha-3"] in data_terbesar]
 list_negara2 = [i["name"]for i in cek3]
 list_kode2 = [i["alpha-3"] for i in cek3]
@@ -88,7 +89,7 @@ list_region2 = [i["region"]for i in cek3]
 list_subregion2 = [i["sub-region"] for i in cek3]
 data_besar = {"Nama Negara" : list_negara2, "Kode Negara": list_kode2, "Region": list_region2, "Sub-region": list_subregion2}
 data_frame_besar = pd.DataFrame(data_besar)
-st.write("Data Negara dengan Jumlah Produksi Terbesar dari tahun 1971-2015 dengan total produksi", data_terbesar)
+st.write("Data Negara dengan Jumlah Produksi Terbesar dari tahun 1971-2015 dengan total produksi", besar_produksi)
 st.table(data_frame_besar)
 #tabel untuk soal D (terbesar) pada keseluruhan tahun
 
