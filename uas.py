@@ -9,14 +9,10 @@ st.header("UAS Pemrograman Komputer (IF-2112) Institut Teknologi Bandung")
 st.subheader("Devanto Wicaksono Soekardi (12220061)")
 
 #input user
-#nama_negara = st.sidebar.text_input("Masukkan nama negara", "Type here...")
-#tahun = st.sidebar.number_input("Masukkan tahun", "Type here...")
-#nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", "Type here...")
+nama_negara = st.sidebar.text_input("Masukkan nama negara", "Type here...")
+tahun = st.sidebar.number_input("Masukkan tahun", "Type here...")
+nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", "Type here...")
 #input user
-
-nama_negara = input("Masukkan nama negara: ")
-tahun = input("Masukkan tahun: ")
-nilai_b = input("Masukkan b besar negara: ")
 
 #membuka file json dan mencocokan dengan nama negara inputan user
 file = open("kode_negara_lengkap.json").read()
