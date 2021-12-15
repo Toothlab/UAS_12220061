@@ -71,7 +71,7 @@ st.pyplot(fig)
 #plotting untuk soal C
 
 #tabel untuk soal D (terbesar) pada tahun T
-produsen_terbesar_tahun = b_besar_negara_tahun[1:2]
+produsen_terbesar_tahun = b_besar_negara_tahun[0:1]
 negara_terbesar_tahun = produsen_terbesar_tahun.iloc[0]["kode_negara"]
 besar_produksi_tahun = produsen_terbesar_tahun.iloc[0]["produksi"]
 cek2 = [i for i in file_si_json if i["alpha-3"] in negara_terbesar_tahun]
