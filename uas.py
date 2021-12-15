@@ -45,10 +45,11 @@ fig, ax = plt.subplots()
 cmap_name = 'Set1'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(b_besar_negara_tahun["kode_negara"])]
+fig, ax = plt.subplots()
 ax.bar(b_besar_negara_tahun["kode_negara"], b_besar_negara_tahun["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-plt.tight_layout()
+st.pyplot(fig)
 #plotting untuk soal B
 
 #plotting untuk soal C
@@ -60,10 +61,11 @@ fig, ax = plt.subplots()
 cmap_name = 'Set2'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(b_reset["kode_negara"])]
+fig, ax = plt.subplots()
 ax.bar(b_reset["kode_negara"], b_reset["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-plt.tight_layout()
+st.pyplot(fig)
 #plotting untuk soal C
 
 #tabel untuk soal D (terbesar) pada tahun T
