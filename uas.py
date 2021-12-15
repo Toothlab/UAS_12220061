@@ -143,7 +143,7 @@ list_region5 = [i["region"]for i in cek6]
 list_subregion5 = [i["sub-region"] for i in cek6]
 data_k = {"Nama Negara" : list_negara5, "Kode Negara": list_kode5, "Region": list_region5, "Sub-region": list_subregion5}
 data_frame_k = pd.DataFrame(data_k)
-st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun)
+st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun, "dengan total produksi", besar_terkecil_tahun)
 st.table(data_frame_k)
 #tabel untuk soal D (terkecil bukan 0) pada tahun T
 
@@ -161,6 +161,6 @@ list_region6 = [i["region"]for i in cek7]
 list_subregion6 = [i["sub-region"] for i in cek7]
 data_k_total = {"Nama Negara" : list_negara6, "Kode Negara": list_kode6, "Region": list_region6, "Sub-region": list_subregion6}
 data_frame_k_total = pd.DataFrame(data_k_total)
-st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) dari Tahun 1971-2015")
+st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) dari Tahun 1971-2015 dengan total produksi", besar_terkecil_total)
 st.table(data_frame_k_total)
 #tabel untuk soal D (terkecil bukan 0) pada keseluruhan tahun
