@@ -32,7 +32,7 @@ ax.bar(data_olah["tahun"], data_olah["produksi"], color="black")
 ax.set_xticklabels(data_olah["tahun"])
 ax.set_xlabel("Tahun", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader("Grafik Produksi Minyak Mentah per Tahun Negara "+nama_negara)
+st.subheader("Grafik Produksi Minyak Mentah per Tahun Negara "+nama_negara.capitalize())
 st.pyplot(fig)
 #plotting untuk soal A
 
@@ -50,7 +50,7 @@ fig, ax = plt.subplots()
 ax.bar(b_besar_negara_tahun["kode_negara"], b_besar_negara_tahun["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader(nilai_b+" Besar Negara Produsen Minyak di Tahun "+tahun)
+st.subheader(nilai_b + " Besar Negara Produsen Minyak di Tahun " + tahun)
 st.pyplot(fig)
 #plotting untuk soal B
 
@@ -67,7 +67,7 @@ fig, ax = plt.subplots()
 ax.bar(b_reset["kode_negara"], b_reset["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader(nilai_b+" Besar Negara Produsen Minyak dari Tahun 1971-2015")
+st.subheader(nilai_b + " Besar Negara Produsen Minyak dari Tahun 1971-2015")
 st.pyplot(fig)
 #plotting untuk soal C
 
