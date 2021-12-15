@@ -18,8 +18,8 @@ nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, 
 #membuka file json dan mencocokan dengan nama negara inputan user
 file = open("kode_negara_lengkap.json").read()
 file_si_json = json.loads(file)
-input_nama_negara = nama_negara.title()
-cek = [i for i in file_si_json if i["name"] == input_nama_negara]
+input_nama_negara = nama_negara
+cek = [i for i in file_si_json if i["name"].lower() == input_nama_negara]
 list_input = [i["alpha-3"] for i in cek]
 #membuka file json dan mencocokan dengan nama negara inputan user
 
