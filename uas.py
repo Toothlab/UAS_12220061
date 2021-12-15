@@ -129,3 +129,38 @@ data_frame_total_nol = pd.DataFrame(data_total_nol)
 st.write("Data Negara dengan Jumlah Produksi Nol dari Tahun 1971-2015")
 st.table(data_frame_total_nol)
 #tabel untuk soal D (produksi = 0) pada keseluruhan tahun
+
+#tabel untuk soal D (terkecil bukan 0) pada tahun T
+data_lebih_nol = data_with_index[data_with_index['produksi'] >0]
+data_terkecil = data_lebih_nol[(data_lebih_nol["tahun"]== int(tahun))]
+b_kecil = data_terkecil.nsmallest(1, ["produksi"])
+negara_terkecil_tahun = b_kecil.iloc[0]["kode_negara"]
+besar_terkecil_tahun = b_kecil.iloc[0]["produksi"]
+cek6 = [i for i in file_si_json if i["alpha-3"] in negara_terkecil_tahun]
+list_negara5 = [i["name"]for i in cek6]
+list_kode5 = [i["alpha-3"] for i in cek6]
+list_region5 = [i["region"]for i in cek6]
+list_subregion5 = [i["sub-region"] for i in cek6]
+data_k = {"Nama Negara" : list_negara5, "Kode Negara": list_kode5, "Region": list_region5, "Sub-region": list_subregion5}
+data_frame_k = pd.DataFrame(data_k)
+st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun)
+st.table(data_frame_k)
+#tabel untuk soal D (terkecil bukan 0) pada tahun T
+
+#tabel untuk soal D (terkecil bukan 0) pada keseluruhan tahun
+data_total_kecil = data_lebih_nol.groupby("kode_negara")["produksi"].sum()
+data_total_kecil.sort_values(ascending=True)
+df_data_total_kecil= data_total_kecil.reset_index()
+negara_terkecil_total = df_data_total_kecil.nsmallest(1, ["produksi"])
+produksi_terkecil_total = negara_terkecil_total.iloc[0]["kode_negara"]
+besar_terkecil_total = negara_terkecil_total.iloc[0]["produksi"]
+cek7 = [i for i in file_si_json if i["alpha-3"] in produksi_terkecil_total]
+list_negara6 = [i["name"]for i in cek7]
+list_kode6 = [i["alpha-3"] for i in cek7]
+list_region6 = [i["region"]for i in cek7]
+list_subregion6 = [i["sub-region"] for i in cek7]
+data_k_total = {"Nama Negara" : list_negara6, "Kode Negara": list_kode6, "Region": list_region6, "Sub-region": list_subregion6}
+data_frame_k_total = pd.DataFrame(data_k_total)
+st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) dari Tahun 1971-2015")
+st.table(data_frame_k_total)
+#tabel untuk soal D (terkecil bukan 0) pada keseluruhan tahun
