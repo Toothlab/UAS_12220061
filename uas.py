@@ -108,6 +108,7 @@ list_region3 = [i["region"]for i in cek4]
 list_subregion3 = [i["sub-region"] for i in cek4]
 data_d_nol = {"Nama Negara" : list_negara3, "Kode Negara": list_kode3, "Region": list_region3, "Sub-region": list_subregion3}
 data_frame_d_nol = pd.DataFrame(data_d_nol)
+st.write("Data Negara dengan Jumlah Produksi Nol di Tahun", tahun)
 st.table(data_frame_d_nol)
 #tabel untuk soal D (produksi = 0) pada tahun T
 
@@ -123,5 +124,6 @@ list_region4 = [i["region"]for i in cek5]
 list_subregion4 = [i["sub-region"] for i in cek5]
 data_total_nol = {"Nama Negara" : list_negara4, "Kode Negara": list_kode4, "Region": list_region4, "Sub-region": list_subregion4}
 data_frame_total_nol = pd.DataFrame(data_total_nol)
+st.write("Data Negara dengan Jumlah Produksi Nol dari Tahun 1971-2015")
 st.table(data_frame_total_nol)
 #tabel untuk soal D (produksi = 0) pada keseluruhan tahun
