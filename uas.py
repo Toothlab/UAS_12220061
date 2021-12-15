@@ -41,7 +41,6 @@ data_with_index = data_with_index.drop(["WLD", "G20", "OECD", "OEU", "EU28"]) #m
 data_with_index = data_with_index.reset_index("kode_negara") #mengembalikan format dataframe pada kolom kode_negara
 data_tahun = data_with_index[(data_with_index["tahun"] == int(tahun))] 
 b_besar_negara_tahun = data_tahun.nlargest(int(nilai_b), ["produksi"])
-fig, ax = plt.subplots()
 cmap_name = 'Set1'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(b_besar_negara_tahun["kode_negara"])]
@@ -58,7 +57,6 @@ data_total_produksi = data_with_index.groupby(["kode_negara"])["produksi"].sum()
 data_total_produksi.sort_values(ascending=False)
 b_besar_negara_total = data_total_produksi.nlargest(int(nilai_b))
 b_reset = b_besar_negara_total.reset_index()
-fig, ax = plt.subplots()
 cmap_name = 'Set2'
 cmap = cm.get_cmap(cmap_name)
 colors = cmap.colors[:len(b_reset["kode_negara"])]
