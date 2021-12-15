@@ -83,7 +83,7 @@ total_produksi_tahun= data_tahun.groupby(["tahun"])["produksi"].sum()
 total_produksi_besar = total_produksi_tahun.reset_index().iloc[0]["produksi"]
 data_d = {"Nama Negara" : list_negara, "Kode Negara": list_kode, "Region": list_region, "Sub-region": list_subregion}
 data_frame_d = pd.DataFrame(data_d)
-st.write("Data Negara dengan Jumlah Produksi Terbesar di Tahun", tahun, "dengan total produksi", besar_produksi_tahun, "dan total produksi seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
+st.write("Data Negara dengan Jumlah Produksi Terbesar di Tahun", tahun, "dengan total produksi", besar_produksi_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
 st.table(data_frame_d)
 #tabel untuk soal D (terbesar) pada tahun T
 
@@ -145,7 +145,7 @@ list_region5 = [i["region"]for i in cek6]
 list_subregion5 = [i["sub-region"] for i in cek6]
 data_k = {"Nama Negara" : list_negara5, "Kode Negara": list_kode5, "Region": list_region5, "Sub-region": list_subregion5}
 data_frame_k = pd.DataFrame(data_k)
-st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun, "dengan total produksi", besar_terkecil_tahun)
+st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun, "dengan total produksi", besar_terkecil_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
 st.table(data_frame_k)
 #tabel untuk soal D (terkecil bukan 0) pada tahun T
 
