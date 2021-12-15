@@ -12,7 +12,6 @@ st.subheader("Devanto Wicaksono Soekardi (12220061)")
 nama_negara = st.sidebar.text_input("Masukkan nama negara", value = "indonesia")
 tahun = st.sidebar.number_input("Masukkan tahun", min_value=1971, max_value=2015, value = 2001, step = 1)
 nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, max_value=200, value = 10, step = 1)
-
 #input user
 
 #membuka file json dan mencocokan dengan nama negara inputan user
@@ -69,7 +68,7 @@ st.pyplot(fig)
 #plotting untuk soal C
 
 #tabel untuk soal D (terbesar) pada tahun T
-produsen_terbesar_tahun = b_besar_negara_tahun[1:2]
+produsen_terbesar_tahun = b_besar_negara_tahun[0:1]
 negara_terbesar_tahun = produsen_terbesar_tahun.iloc[0]["kode_negara"]
 besar_produksi_tahun = produsen_terbesar_tahun.iloc[0]["produksi"]
 cek2 = [i for i in file_si_json if i["alpha-3"] in negara_terbesar_tahun]
