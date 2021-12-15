@@ -32,7 +32,7 @@ ax.bar(data_olah["tahun"], data_olah["produksi"], color="black")
 ax.set_xticklabels(data_olah["tahun"])
 ax.set_xlabel("Tahun", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader("Grafik Produksi Minyak Mentah per Tahun Negara "+nama_negara.capitalize())
+st.subheader("Grafik Produksi Minyak Mentah per Tahun Negara "+nama_negara.title())
 st.pyplot(fig)
 #plotting untuk soal A
 
