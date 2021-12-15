@@ -10,8 +10,9 @@ st.subheader("Devanto Wicaksono Soekardi (12220061)")
 
 #input user
 nama_negara = st.sidebar.text_input("Masukkan nama negara")
-tahun = st.sidebar.number_input("Masukkan tahun", min_value=1971, max_value=2015, value = int)
-nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, max_value=200, value = int)
+tahun = st.sidebar.number_input("Masukkan tahun", min_value=1971, max_value=2015, value = int, step=int)
+nilai_b = st.sidebar.number_input("Masukkan nilai B-besar negara", min_value=1, max_value=200, value = int, step=int)
+
 #input user
 
 #membuka file json dan mencocokan dengan nama negara inputan user
