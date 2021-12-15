@@ -71,7 +71,7 @@ st.pyplot(fig)
 #plotting untuk soal C
 
 #tabel untuk soal D (terbesar) pada tahun T
-produsen_terbesar_tahun = b_besar_negara_tahun[0:1]
+produsen_terbesar_tahun = b_besar_negara_tahun[1:2]
 negara_terbesar_tahun = produsen_terbesar_tahun.iloc[0]["kode_negara"]
 besar_produksi_tahun = produsen_terbesar_tahun.iloc[0]["produksi"]
 cek2 = [i for i in file_si_json if i["alpha-3"] in negara_terbesar_tahun]
@@ -79,9 +79,11 @@ list_negara = [i["name"]for i in cek2]
 list_kode = [i["alpha-3"] for i in cek2]
 list_region = [i["region"]for i in cek2]
 list_subregion = [i["sub-region"] for i in cek2]
+total_produksi_tahun= data_tahun.groupby(["tahun"])["produksi"].sum()
+total_produksi_besar = total_produksi_tahun.reset_index().iloc[0]["produksi"]
 data_d = {"Nama Negara" : list_negara, "Kode Negara": list_kode, "Region": list_region, "Sub-region": list_subregion}
 data_frame_d = pd.DataFrame(data_d)
-st.write("Data Negara dengan Jumlah Produksi Terbesar di Tahun", tahun, "dengan total produksi", besar_produksi_tahun)
+st.write("Data Negara dengan Jumlah Produksi Terbesar di Tahun", tahun, "dengan total produksi", besar_produksi_tahun, "dan total produksi seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
 st.table(data_frame_d)
 #tabel untuk soal D (terbesar) pada tahun T
 
