@@ -47,7 +47,7 @@ fig, ax = plt.subplots()
 ax.bar(b_besar_negara_tahun["kode_negara"], b_besar_negara_tahun["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader(str(nilai_b) + " Besar Negara Produsen Minyak di Tahun " + str(tahun))
+st.subheader(str(nilai_b) + " Besar Negara Produsen Minyak Mentah di Tahun " + str(tahun))
 st.pyplot(fig)
 #plotting untuk soal B
 
@@ -63,7 +63,7 @@ fig, ax = plt.subplots()
 ax.bar(b_reset["kode_negara"], b_reset["produksi"], color=colors)
 ax.set_xlabel("Kode Negara", fontsize=12)
 ax.set_ylabel("Total Produksi Minyak Mentah", fontsize=12)
-st.subheader(str(nilai_b) + " Besar Negara Produsen Minyak dari Tahun 1971-2015")
+st.subheader(str(nilai_b) + " Besar Negara Produsen Minyak Mentah dari Tahun 1971-2015")
 st.pyplot(fig)
 #plotting untuk soal C
 
@@ -80,7 +80,7 @@ total_produksi_tahun= data_tahun.groupby(["tahun"])["produksi"].sum()
 total_produksi_besar = total_produksi_tahun.reset_index().iloc[0]["produksi"]
 data_d = {"Nama Negara" : list_negara, "Kode Negara": list_kode, "Region": list_region, "Sub-region": list_subregion}
 data_frame_d = pd.DataFrame(data_d)
-st.write("Data Negara dengan Jumlah Produksi Terbesar di Tahun", tahun, "dengan total produksi", besar_produksi_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
+st.write("Data negara dengan jumlah produksi minyak mentah terbesar di tahun", tahun, "dengan total produksi", besar_produksi_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
 st.table(data_frame_d)
 #tabel untuk soal D (terbesar) pada tahun T
 
@@ -94,7 +94,7 @@ list_region2 = [i["region"]for i in cek3]
 list_subregion2 = [i["sub-region"] for i in cek3]
 data_besar = {"Nama Negara" : list_negara2, "Kode Negara": list_kode2, "Region": list_region2, "Sub-region": list_subregion2}
 data_frame_besar = pd.DataFrame(data_besar)
-st.write("Data Negara dengan Jumlah Produksi Terbesar dari tahun 1971-2015 dengan total produksi", besar_produksi)
+st.write("Data negara dengan jumlah produksi minyak mentah terbesar di dunia (dari tahun 1971-2015) dengan total produksi", besar_produksi)
 st.table(data_frame_besar)
 #tabel untuk soal D (terbesar) pada keseluruhan tahun
 
@@ -109,7 +109,7 @@ list_region3 = [i["region"]for i in cek4]
 list_subregion3 = [i["sub-region"] for i in cek4]
 data_d_nol = {"Nama Negara" : list_negara3, "Kode Negara": list_kode3, "Region": list_region3, "Sub-region": list_subregion3}
 data_frame_d_nol = pd.DataFrame(data_d_nol)
-st.write("Data Negara dengan Jumlah Produksi Nol di Tahun", tahun)
+st.write("Data negara dengan jumlah produksi minyak mentah nol di tahun", tahun)
 st.table(data_frame_d_nol)
 #tabel untuk soal D (produksi = 0) pada tahun T
 
@@ -125,7 +125,7 @@ list_region4 = [i["region"]for i in cek5]
 list_subregion4 = [i["sub-region"] for i in cek5]
 data_total_nol = {"Nama Negara" : list_negara4, "Kode Negara": list_kode4, "Region": list_region4, "Sub-region": list_subregion4}
 data_frame_total_nol = pd.DataFrame(data_total_nol)
-st.write("Data Negara dengan Jumlah Produksi Nol dari Tahun 1971-2015")
+st.write("Data negara dengan jumlah produksi minyak mentah nol dari tahun 1971-2015")
 st.table(data_frame_total_nol)
 #tabel untuk soal D (produksi = 0) pada keseluruhan tahun
 
@@ -142,7 +142,7 @@ list_region5 = [i["region"]for i in cek6]
 list_subregion5 = [i["sub-region"] for i in cek6]
 data_k = {"Nama Negara" : list_negara5, "Kode Negara": list_kode5, "Region": list_region5, "Sub-region": list_subregion5}
 data_frame_k = pd.DataFrame(data_k)
-st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) di Tahun", tahun, "dengan total produksi", besar_terkecil_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
+st.write("Data negara dengan jumlah produksi minyak mentah terkecil (bukan nol) di Tahun", tahun, "dengan total produksi", besar_terkecil_tahun, "dan total produksi minyak mentah seluruh negara di tahun", tahun, "adalah", total_produksi_besar)
 st.table(data_frame_k)
 #tabel untuk soal D (terkecil bukan 0) pada tahun T
 
@@ -160,6 +160,6 @@ list_region6 = [i["region"]for i in cek7]
 list_subregion6 = [i["sub-region"] for i in cek7]
 data_k_total = {"Nama Negara" : list_negara6, "Kode Negara": list_kode6, "Region": list_region6, "Sub-region": list_subregion6}
 data_frame_k_total = pd.DataFrame(data_k_total)
-st.write("Data Negara dengan Jumlah Produksi Terkecil (Bukan Nol) dari Tahun 1971-2015 dengan total produksi", besar_terkecil_total)
+st.write("Data negara dengan jumlah produksi minyak mentah terkecil (bukan nol) dari Tahun 1971-2015 dengan total produksi", besar_terkecil_total)
 st.table(data_frame_k_total)
 #tabel untuk soal D (terkecil bukan 0) pada keseluruhan tahun
