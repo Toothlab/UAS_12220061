@@ -22,7 +22,7 @@ cek = [i for i in file_si_json if i["name"].lower() == input_nama_negara.lower()
 list_input = [i["alpha-3"] for i in cek]
 #membuka file json dan mencocokan dengan nama negara inputan user
 
-#plotting untuk soal A dengan membuka csv dan inputan diambil dari part di atas
+#plotting untuk soal A
 filename = "produksi_minyak_mentah.csv"
 df = pd.read_csv(filename)
 data_olah =df[(df["kode_negara"] == list_input[0])]
